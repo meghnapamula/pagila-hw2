@@ -12,8 +12,12 @@
  * in problem 05b you will use the LEFT JOIN clause.
  */
 
-SELECT *
+SELECT
+last_name,
+first_name
 FROM actor
-WHERE CONCAT(first_name, ' ', last_name) NOT IN (
-    SELECT CONCAT(first_name, ' ', last_name)
-    FROM customer;
+WHERE last_name || first_name NOT IN (
+	SELECT last_name || first_name
+	FROM customer)
+ORDER BY last_name, first_name;
+
