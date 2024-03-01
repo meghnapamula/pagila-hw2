@@ -11,3 +11,9 @@
  * For this problem, you should use the NOT IN clause;
  * in problem 05b you will use the LEFT JOIN clause.
  */
+
+SELECT *
+FROM actor
+WHERE CONCAT(first_name, ' ', last_name) NOT IN (
+    SELECT CONCAT(first_name, ' ', last_name)
+    FROM customer;
